@@ -1,4 +1,4 @@
-# EcoAd AI Backend
+# AWE AGENCY Backend
 
 A FastAPI backend for an AI-powered adtech platform that helps small businesses create deeply personalized, story-driven ads using their company's story, product data, audience information, and contextual signals.
 
