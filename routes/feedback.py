@@ -8,6 +8,8 @@ from models.schemas import (
 from services.database import db
 from services.channel_service import channel_service
 from services.carbon_tracker import carbon_tracker
+from services.business_metrics import business_metrics_service
+from services.recommendation_engine import recommendation_engine
 
 router = APIRouter()
 
@@ -191,3 +193,190 @@ async def get_channel_insights() -> Dict[str, Any]:
         
     except Exception as e:
         return {"error": f"Error getting channel insights: {str(e)}"}
+
+# Business Metrics Endpoints
+@router.post("/campaign/{campaign_id}/track")
+async def track_campaign_performance(
+    campaign_id: str,
+    ad_id: str,
+    channel: str,
+    impressions: int,
+    clicks: int,
+    conversions: int,
+    spend: float,
+    revenue: float = 0.0
+):
+    """Track campaign performance metrics"""
+    
+    try:
+        business_metrics_service.track_campaign_performance(
+            campaign_id=campaign_id,
+            ad_id=ad_id,
+            channel=channel,
+            impressions=impressions,
+            clicks=clicks,
+            conversions=conversions,
+            spend=spend,
+            revenue=revenue
+        )
+        
+        return {"message": "Campaign performance tracked successfully"}
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error tracking campaign performance: {str(e)}")
+
+@router.get("/campaign/{campaign_id}/roi")
+async def get_campaign_roi(campaign_id: str):
+    """Get ROI metrics for a campaign"""
+    
+    try:
+        metrics = business_metrics_service.calculate_roi_metrics(campaign_id)
+        if not metrics:
+            raise HTTPException(status_code=404, detail="Campaign not found")
+        
+        return metrics
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting campaign ROI: {str(e)}")
+
+@router.get("/brand/{brand_id}/performance")
+async def get_brand_performance(brand_id: str):
+    """Get overall performance metrics for a brand"""
+    
+    try:
+        performance = business_metrics_service.get_brand_performance(brand_id)
+        return performance
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting brand performance: {str(e)}")
+
+@router.get("/channels/performance")
+async def get_channel_performance():
+    """Get performance metrics by channel"""
+    
+    try:
+        performance = business_metrics_service.get_channel_performance()
+        return performance
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting channel performance: {str(e)}")
+
+@router.get("/campaign/{campaign_id}/insights")
+async def get_roi_insights(campaign_id: str):
+    """Get ROI insights and recommendations for a campaign"""
+    
+    try:
+        insights = business_metrics_service.get_roi_insights(campaign_id)
+        return insights
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting ROI insights: {str(e)}")
+
+# Recommendation Engine Endpoints
+@router.post("/ad/{ad_id}/track")
+async def track_ad_performance(
+    ad_id: str,
+    channel: str,
+    audience_segment: str,
+    impressions: int,
+    clicks: int,
+    conversions: int,
+    revenue: float = 0.0,
+    ad_attributes: Dict[str, Any] = None
+):
+    """Track ad performance for recommendation learning"""
+    
+    try:
+        recommendation_engine.track_ad_performance(
+            ad_id=ad_id,
+            channel=channel,
+            audience_segment=audience_segment,
+            impressions=impressions,
+            clicks=clicks,
+            conversions=conversions,
+            revenue=revenue,
+            ad_attributes=ad_attributes
+        )
+        
+        return {"message": "Ad performance tracked successfully"}
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error tracking ad performance: {str(e)}")
+
+@router.get("/recommendations/ads")
+async def get_ad_recommendations(
+    audience_segment: str,
+    channel: str,
+    limit: int = 5
+):
+    """Get ad recommendations for a specific audience segment and channel"""
+    
+    try:
+        recommendations = recommendation_engine.get_recommendations(
+            audience_segment=audience_segment,
+            channel=channel,
+            limit=limit
+        )
+        
+        return {
+            "audience_segment": audience_segment,
+            "channel": channel,
+            "recommendations": recommendations
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting ad recommendations: {str(e)}")
+
+@router.get("/recommendations/channels")
+async def get_channel_recommendations(audience_segment: str):
+    """Get best channels for a specific audience segment"""
+    
+    try:
+        recommendations = recommendation_engine.get_channel_recommendations(
+            audience_segment=audience_segment
+        )
+        
+        return {
+            "audience_segment": audience_segment,
+            "channel_recommendations": recommendations
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting channel recommendations: {str(e)}")
+
+@router.get("/patterns/{audience_segment}")
+async def get_successful_patterns(audience_segment: str):
+    """Get successful ad patterns for an audience segment"""
+    
+    try:
+        patterns = recommendation_engine.get_successful_patterns(audience_segment)
+        
+        return {
+            "audience_segment": audience_segment,
+            "patterns": patterns
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting successful patterns: {str(e)}")
+
+@router.get("/insights/performance")
+async def get_performance_insights():
+    """Get overall performance insights"""
+    
+    try:
+        insights = recommendation_engine.get_performance_insights()
+        return insights
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting performance insights: {str(e)}")
+
+@router.get("/insights/whats-working")
+async def get_whats_working_summary():
+    """Get summary of what's working across all campaigns"""
+    
+    try:
+        summary = recommendation_engine.get_whats_working_summary()
+        return summary
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting what's working summary: {str(e)}")

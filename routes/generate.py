@@ -8,6 +8,7 @@ from models.schemas import (
 from services.database import db
 from services.ai_service import ai_service
 from services.carbon_tracker import carbon_tracker
+from services.ab_testing import ab_testing_service
 
 router = APIRouter()
 
@@ -174,3 +175,131 @@ async def refresh_ad(ad_id: str, context_signals: Dict[str, Any]):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error refreshing ad: {str(e)}")
+
+# A/B Testing Endpoints
+@router.post("/ab-test/create")
+async def create_ab_test(
+    test_name: str,
+    ad_id: str,
+    test_type: str = "headline",
+    traffic_split: float = 0.5
+):
+    """Create an A/B test for an existing ad"""
+    
+    try:
+        # Get the base ad
+        base_ad = await db.get_ad(ad_id)
+        if not base_ad:
+            raise HTTPException(status_code=404, detail="Ad not found")
+        
+        # Create A/B test
+        test_config = ab_testing_service.create_test(
+            test_name=test_name,
+            base_ad=base_ad,
+            test_type=test_type,
+            traffic_split=traffic_split
+        )
+        
+        return {
+            "message": "A/B test created successfully",
+            "test_id": test_config["test_id"],
+            "test_name": test_config["test_name"],
+            "variants": len(test_config["variants"]),
+            "traffic_split": traffic_split
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error creating A/B test: {str(e)}")
+
+@router.get("/ab-test/{test_id}/variant")
+async def get_test_variant(test_id: str, user_id: str):
+    """Get variant for a specific user in an A/B test"""
+    
+    try:
+        variant = ab_testing_service.get_variant_for_user(test_id, user_id)
+        if not variant:
+            raise HTTPException(status_code=404, detail="Test not found")
+        
+        return {
+            "test_id": test_id,
+            "user_id": user_id,
+            "variant": variant
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting test variant: {str(e)}")
+
+@router.post("/ab-test/{test_id}/impression")
+async def record_impression(test_id: str, variant_id: str, user_id: str):
+    """Record an impression for a test variant"""
+    
+    try:
+        ab_testing_service.record_impression(test_id, variant_id, user_id)
+        return {"message": "Impression recorded successfully"}
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error recording impression: {str(e)}")
+
+@router.post("/ab-test/{test_id}/click")
+async def record_click(test_id: str, variant_id: str, user_id: str):
+    """Record a click for a test variant"""
+    
+    try:
+        ab_testing_service.record_click(test_id, variant_id, user_id)
+        return {"message": "Click recorded successfully"}
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error recording click: {str(e)}")
+
+@router.post("/ab-test/{test_id}/conversion")
+async def record_conversion(test_id: str, variant_id: str, user_id: str, revenue: float = 0.0):
+    """Record a conversion for a test variant"""
+    
+    try:
+        ab_testing_service.record_conversion(test_id, variant_id, user_id, revenue)
+        return {"message": "Conversion recorded successfully"}
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error recording conversion: {str(e)}")
+
+@router.get("/ab-test/{test_id}/results")
+async def get_test_results(test_id: str):
+    """Get results for an A/B test"""
+    
+    try:
+        results = ab_testing_service.get_test_results(test_id)
+        if not results:
+            raise HTTPException(status_code=404, detail="Test not found")
+        
+        return results
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting test results: {str(e)}")
+
+@router.post("/ab-test/{test_id}/end")
+async def end_test(test_id: str):
+    """End an A/B test and get final results"""
+    
+    try:
+        results = ab_testing_service.end_test(test_id)
+        if not results:
+            raise HTTPException(status_code=404, detail="Test not found")
+        
+        return {
+            "message": "Test ended successfully",
+            "results": results
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error ending test: {str(e)}")
+
+@router.get("/ab-test/all")
+async def get_all_tests():
+    """Get all active A/B tests"""
+    
+    try:
+        tests = ab_testing_service.get_all_tests()
+        return {"tests": tests}
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting tests: {str(e)}")

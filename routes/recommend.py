@@ -230,3 +230,126 @@ async def get_channel_insights():
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error retrieving channel insights: {str(e)}")
+
+@router.get("/channel/strategy", response_model=Dict[str, Any])
+async def get_channel_strategy():
+    """Get the channel selection strategy matrix"""
+    
+    try:
+        strategy_matrix = {
+            "rule_based_mapping": {
+                "description": "Use audience data, product type, and segment to map ads to the best platform",
+                "feasibility": "Easy (1 day)",
+                "status": "✅ Implemented"
+            },
+            "bandit_optimization": {
+                "description": "Start simple but improve over time based on performance (CTR, conversions)",
+                "feasibility": "Achievable in 24h",
+                "status": "✅ Implemented"
+            },
+            "channel_matrix": {
+                "b2b_professional_services": {
+                    "best_platform": "LinkedIn",
+                    "why": "Great for credibility, trust, lead generation",
+                    "ctr_prediction": "2.0%"
+                },
+                "consumer_product_gen_z": {
+                    "best_platform": "Instagram / TikTok",
+                    "why": "Visual, viral, fast conversions",
+                    "ctr_prediction": "1.5%"
+                },
+                "visual_products": {
+                    "best_platform": "Instagram / Pinterest",
+                    "why": "Image-first, discovery focused",
+                    "ctr_prediction": "1.8%"
+                },
+                "search_intent": {
+                    "best_platform": "Google Search / Display",
+                    "why": "Users actively searching",
+                    "ctr_prediction": "1.0%"
+                },
+                "local_business": {
+                    "best_platform": "Facebook Local / Google Maps",
+                    "why": "Geo-targeting + discovery",
+                    "ctr_prediction": "1.2%"
+                }
+            },
+            "learning_algorithm": {
+                "type": "Multi-armed Bandit",
+                "description": "Continuously shifts budget toward channels with higher CTR",
+                "tracking_metrics": ["impressions", "clicks", "ctr", "conversions"],
+                "status": "Active"
+            }
+        }
+        
+        return strategy_matrix
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error retrieving channel strategy: {str(e)}")
+
+@router.get("/channel/demo/scenario", response_model=Dict[str, Any])
+async def get_demo_scenario():
+    """Get the coffee shop demo scenario"""
+    
+    try:
+        demo_scenario = {
+            "client": "Local Sustainable Coffee Shop",
+            "brand_story": "Family-owned, carbon-neutral, sourced directly from farmers",
+            "segment": "Eco-conscious millennials",
+            "campaign_goal": "Drive new store visits",
+            "ai_decisions": {
+                "primary_channel": "Instagram",
+                "secondary_channel": "Google Maps Ads",
+                "reasoning": {
+                    "instagram": "Perfect for visual storytelling and reaching eco-conscious millennials",
+                    "google_maps": "Local intent targeting for store visits"
+                },
+                "ad_style": {
+                    "instagram": "Emotional, story-first video for IG Reels",
+                    "google_maps": "Local intent copy for search"
+                },
+                "cta": "Visit us this weekend for a free tasting ☕🌿",
+                "predicted_performance": {
+                    "instagram": {
+                        "ctr": "1.8%",
+                        "conversion_rate": "3.2%",
+                        "cost_per_visit": "$12.50"
+                    },
+                    "google_maps": {
+                        "ctr": "2.1%",
+                        "conversion_rate": "4.5%",
+                        "cost_per_visit": "$8.75"
+                    }
+                }
+            },
+            "channel_recommendations": [
+                {
+                    "channel": "Instagram",
+                    "confidence": 0.85,
+                    "predicted_ctr": 0.018,
+                    "reasoning": "Visual platform perfect for eco-conscious millennials, high engagement potential"
+                },
+                {
+                    "channel": "Google Maps Ads",
+                    "confidence": 0.78,
+                    "predicted_ctr": 0.021,
+                    "reasoning": "Local intent targeting, users actively searching for coffee shops"
+                },
+                {
+                    "channel": "Facebook Local",
+                    "confidence": 0.65,
+                    "predicted_ctr": 0.012,
+                    "reasoning": "Community-focused platform, good for local business discovery"
+                }
+            ],
+            "learning_insights": [
+                "System will track actual performance vs predictions",
+                "Budget will shift toward higher-performing channels",
+                "A/B testing will optimize ad creative for each platform"
+            ]
+        }
+        
+        return demo_scenario
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error retrieving demo scenario: {str(e)}")

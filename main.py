@@ -58,7 +58,7 @@ async def root():
 async def health_check():
     return {
         "status": "healthy",
-        "carbon_tracking": carbon_tracker.is_tracking()
+        "carbon_tracking": carbon_tracker.is_tracking
     }
 
 if __name__ == "__main__":

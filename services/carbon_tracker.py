@@ -175,3 +175,6 @@ class CarbonTracker:
         savings = base_emissions * self.green_scheduling_factor
         
         return savings
+
+# Global carbon tracker instance
+carbon_tracker = CarbonTracker()

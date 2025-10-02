@@ -110,8 +110,8 @@ class ContextSignals(BaseModel):
 
 class AdResponse(BaseModel):
     id: str
-    headline: str = Field(..., max_length=8, description="Ad headline")
-    body: str = Field(..., max_length=40, description="Ad body text")
+    headline: str = Field(..., max_length=50, description="Ad headline")
+    body: str = Field(..., max_length=100, description="Ad body text")
     cta: str = Field(..., description="Call to action")
     image_url: Optional[str] = Field(None, description="Generated image URL")
     brand_id: str

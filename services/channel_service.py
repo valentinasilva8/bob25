@@ -12,39 +12,47 @@ class ChannelRecommendationService:
         self.beta = 1.0   # Prior failure count
         self.channel_stats = {}  # Store channel performance statistics
         
-        # Channel characteristics mapping
+        # Enhanced channel characteristics mapping based on your strategy
         self.channel_characteristics = {
             ChannelType.LINKEDIN: {
-                "audience_types": ["professional", "b2b", "executive", "entrepreneur"],
-                "content_types": ["professional", "educational", "thought_leadership"],
+                "audience_types": ["professional", "b2b", "executive", "entrepreneur", "business_owner"],
+                "content_types": ["professional", "educational", "thought_leadership", "case_study"],
                 "best_for_goals": [CampaignGoal.AWARENESS, CampaignGoal.ENGAGEMENT],
+                "business_types": ["b2b", "professional_services", "enterprise", "consulting"],
                 "base_ctr": 0.02,
                 "base_cpc": 5.50,
-                "demographic": "25-65, professional"
+                "demographic": "25-65, professional",
+                "why_choose": "Great for credibility, trust, lead generation"
             },
             ChannelType.INSTAGRAM: {
-                "audience_types": ["millennial", "gen_z", "visual_learners", "lifestyle"],
-                "content_types": ["visual", "lifestyle", "inspiring", "authentic"],
+                "audience_types": ["millennial", "gen_z", "visual_learners", "lifestyle", "eco_conscious", "fashion_forward"],
+                "content_types": ["visual", "lifestyle", "inspiring", "authentic", "story_driven"],
                 "best_for_goals": [CampaignGoal.ENGAGEMENT, CampaignGoal.AWARENESS],
+                "business_types": ["consumer_products", "fashion", "food", "lifestyle", "eco_products"],
                 "base_ctr": 0.015,
                 "base_cpc": 3.20,
-                "demographic": "18-45, visual-focused"
+                "demographic": "18-45, visual-focused",
+                "why_choose": "Visual, viral, fast conversions for lifestyle brands"
             },
             ChannelType.GOOGLE_DISPLAY: {
-                "audience_types": ["general", "shoppers", "researchers", "intent_driven"],
-                "content_types": ["informational", "product_focused", "comparison"],
+                "audience_types": ["general", "shoppers", "researchers", "intent_driven", "local_searchers"],
+                "content_types": ["informational", "product_focused", "comparison", "local_intent"],
                 "best_for_goals": [CampaignGoal.CONVERSION, CampaignGoal.TRAFFIC],
+                "business_types": ["services", "solutions", "local_business", "ecommerce"],
                 "base_ctr": 0.01,
                 "base_cpc": 1.80,
-                "demographic": "All ages, intent-driven"
+                "demographic": "All ages, intent-driven",
+                "why_choose": "Users actively searching for solutions"
             },
             ChannelType.FACEBOOK: {
-                "audience_types": ["general", "community", "social", "local"],
-                "content_types": ["social", "community", "local", "personal"],
+                "audience_types": ["general", "community", "social", "local", "family_oriented"],
+                "content_types": ["social", "community", "local", "personal", "story_driven"],
                 "best_for_goals": [CampaignGoal.ENGAGEMENT, CampaignGoal.AWARENESS],
+                "business_types": ["local_business", "community", "family_products", "local_services"],
                 "base_ctr": 0.012,
                 "base_cpc": 2.40,
-                "demographic": "25-65, social"
+                "demographic": "25-65, social",
+                "why_choose": "Geo-targeting + discovery for local businesses"
             },
             ChannelType.TWITTER: {
                 "audience_types": ["news_consumers", "influencers", "real_time", "conversational"],
@@ -64,6 +72,39 @@ class ChannelRecommendationService:
             }
         }
     
+    def detect_business_type(self, brand_data: Dict[str, Any], product_data: Dict[str, Any]) -> str:
+        """Detect business type based on brand and product data"""
+        
+        company_name = brand_data.get('company_name', '').lower()
+        product_category = product_data.get('category', '').lower()
+        target_market = brand_data.get('target_market', '').lower()
+        
+        # B2B indicators
+        if any(word in company_name for word in ['solutions', 'systems', 'services', 'consulting', 'enterprise']):
+            return 'b2b'
+        if any(word in target_market for word in ['business', 'enterprise', 'professional']):
+            return 'b2b'
+        if any(word in product_category for word in ['software', 'platform', 'system', 'enterprise']):
+            return 'b2b'
+        
+        # Local business indicators
+        if any(word in company_name for word in ['local', 'community', 'neighborhood']):
+            return 'local_business'
+        if any(word in target_market for word in ['local', 'community']):
+            return 'local_business'
+        
+        # Consumer product indicators
+        if any(word in product_category for word in ['fashion', 'beauty', 'food', 'lifestyle']):
+            return 'consumer_products'
+        if any(word in product_category for word in ['eco', 'sustainable', 'green']):
+            return 'eco_products'
+        
+        # Service indicators
+        if any(word in product_category for word in ['service', 'consulting', 'support']):
+            return 'services'
+        
+        return 'general'
+
     def recommend_channels(
         self, 
         brand_data: Dict[str, Any], 
@@ -78,11 +119,14 @@ class ChannelRecommendationService:
         audience_segment = audience_analysis.get("segment", "general")
         audience_characteristics = audience_analysis.get("characteristics", {})
         
+        # Detect business type
+        business_type = self.detect_business_type(brand_data, product_data)
+        
         for channel, characteristics in self.channel_characteristics.items():
             # Calculate compatibility score
             compatibility_score = self._calculate_compatibility(
                 channel, characteristics, brand_data, product_data, 
-                audience_analysis, campaign_goal
+                audience_analysis, campaign_goal, business_type
             )
             
             # Get performance metrics
@@ -125,7 +169,8 @@ class ChannelRecommendationService:
         brand_data: Dict[str, Any], 
         product_data: Dict[str, Any],
         audience_analysis: Dict[str, Any],
-        campaign_goal: CampaignGoal
+        campaign_goal: CampaignGoal,
+        business_type: str
     ) -> float:
         """Calculate compatibility score between channel and campaign"""
         
@@ -160,6 +205,11 @@ class ChannelRecommendationService:
                 if any(tone_match in ct for ct in content_types):
                     score += 0.2
                     break
+        max_score += 0.2
+        
+        # Business type compatibility (20% weight) - NEW!
+        if business_type in characteristics.get("business_types", []):
+            score += 0.2
         max_score += 0.2
         
         # Product category compatibility (10% weight)
