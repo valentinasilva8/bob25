@@ -129,9 +129,8 @@ export default function RegisterPage() {
   return (
     <div className="flex min-h-screen w-full items-center justify-center p-6 md:p-10 bg-gradient-to-br from-green-50 via-blue-50 to-orange-50">
       <div className="w-full max-w-2xl">
-        <Link href="/" className="flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
-          <Image src="/awe-logo.jpg" alt="AWE Logo" width={40} height={40} />
-          <span className="text-2xl font-bold text-primary">awe</span>
+        <Link href="/" className="flex items-center mb-6 hover:opacity-80 transition-opacity">
+          <Image src="/awe-logo.jpg" alt="AWE Logo" width={48} height={48} className="rounded" />
         </Link>
 
         <Card className="border-2">
