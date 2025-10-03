@@ -10,7 +10,7 @@
 **For Full Demo Experience:**
 - **Option 1:** Run locally (see instructions below) for complete functionality
 - **Option 2:** Watch the screen recording demo in the submitted PowerPoint
-- **Option 3:** Screen recording available in the GitHub repository
+- **Option 3:** Screen recording available for download in the GitHub repository
 
 ## 🚀 **Local Development Setup** (Required for Full Demo)
 
