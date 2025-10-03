@@ -12,13 +12,39 @@
 - **Option 2:** Watch the screen recording demo in the submitted PowerPoint
 - **Option 3:** Screen recording available in the GitHub repository
 
+## 🚀 **Local Development Setup** (Required for Full Demo)
+
+**⚠️ IMPORTANT:** To experience the complete AI-powered ad generation pipeline, you must run the application locally. The live Vercel version only shows the frontend UI.
+
+**For Full Demo Experience:**
+
+### **Manual Setup**
+```bash
+# Terminal 1 - Backend
+python3 start_backend.py
+
+# Terminal 2 - Frontend  
+cd frontend && npm install && npm run dev
+```
+
+### **Local Access:**
+- **Frontend:** http://localhost:3000
+- **Backend API:** http://localhost:8002
+- **API Documentation:** http://localhost:8002/docs
+
+### **Alternative: Screen Recording Demo**
+If you prefer not to run the application locally, you can watch the complete demo:
+- **PowerPoint Submission:** Screen recording included in the submitted PowerPoint
+- **GitHub Repository:** [AWE DEMO.mov](demo/AWE%20DEMO.mov) - Complete walkthrough video
+- **Shows:** Complete user journey from form submission to AI-generated ads
+- **Duration:** Full demonstration of the platform's capabilities
+
 ---
 
 ## 🎯 **Step-by-Step Demo Guide for Judges**
 
 ### **1. Landing Page Experience** ✅ **WORKS ON LIVE VERSION**
 - **Visit:** [https://bob25.vercel.app/](https://bob25.vercel.app/)
-- **Observe:** Beautiful hero section with rotating wellness business images
 - **Notice:** "AWE — not A-I. It's A-WE" tagline emphasizing human-centered approach
 - **Explore:** All UI buttons are fully functional - navigate through different sections
 - **Learn More:** Check out the Sustainability tab to understand our environmental approach
@@ -190,33 +216,6 @@ After completing the form, you'll see:
 
 ---
 
-## 🚀 **Local Development Setup** (Required for Full Demo)
-
-**⚠️ IMPORTANT:** To experience the complete AI-powered ad generation pipeline, you must run the application locally. The live Vercel version only shows the frontend UI.
-
-**For Full Demo Experience:**
-
-### **Manual Setup**
-```bash
-# Terminal 1 - Backend
-python3 start_backend.py
-
-# Terminal 2 - Frontend  
-cd frontend && npm install && npm run dev
-```
-
-### **Local Access:**
-- **Frontend:** http://localhost:3000
-- **Backend API:** http://localhost:8002
-- **API Documentation:** http://localhost:8002/docs
-
-### **Alternative: Screen Recording Demo**
-If you prefer not to run the application locally, you can watch the complete demo:
-- **PowerPoint Submission:** Screen recording included in the submitted PowerPoint
-- **GitHub Repository:** [AWE DEMO.mov](demo/AWE%20DEMO.mov) - Complete walkthrough video
-- **Shows:** Complete user journey from form submission to AI-generated ads
-- **Duration:** Full demonstration of the platform's capabilities
-
 ## 🎨 **Key Features**
 
 - **5-step registration form** with creative volume input
@@ -255,7 +254,7 @@ lsof -ti:3000,8002 | xargs kill -9 2>/dev/null || true
 
 ---
 
-## 🏆 **Competition Demo Summary**
+## 🏆 **Summary**
 
 **AWE Agency** demonstrates how AI can create personalized, sustainable marketing solutions for small fitness and wellness businesses. The platform generates unique ad campaigns tailored to each business's story, values, and audience while tracking environmental impact.
 
