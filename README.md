@@ -152,13 +152,41 @@ After completing the form, you'll see:
 - **Case-Insensitive Matching:** Works with any capitalization
 - **Dynamic Calculations:** Environmental metrics based on usage
 
-### **Data Flow:**
-1. User fills 5-step form
-2. Frontend sends data to backend API
-3. Backend matches business name to demo data
-4. AI generates personalized ads and recommendations
-5. Environmental impact calculated based on creative volume
-6. Results displayed with animations and metrics
+### **Backend-Frontend Integration:**
+
+**API Communication:**
+- **Frontend:** Next.js React application running on port 3000
+- **Backend:** FastAPI Python server running on port 8002
+- **Communication:** HTTP POST requests with JSON payloads
+- **CORS:** Enabled for cross-origin requests between frontend and backend
+
+**Data Flow Process:**
+1. **User Input:** User completes 5-step registration form on frontend
+2. **Data Validation:** Frontend validates all required fields before submission
+3. **API Request:** Frontend sends POST request to `http://localhost:8002/business/register/wellness`
+4. **Backend Processing:**
+   - Receives JSON payload with business data
+   - Performs case-insensitive business name matching against `demo_companies.json`
+   - Loads pre-configured demo data for matched business
+   - Calculates environmental impact based on `creatives_per_week` input
+   - Generates personalized ad variations with audience targeting
+5. **Response:** Backend returns structured JSON with:
+   - Generated ads with headlines, body text, CTAs
+   - Audience segments (yoga_enthusiasts, busy_professionals, etc.)
+   - Channel recommendations with confidence scores
+   - Environmental impact metrics (energy, CO₂, green score)
+   - Targeting summary with demographics
+6. **Frontend Display:** Results page renders with animations and metrics
+
+**Error Handling:**
+- **Network Errors:** Frontend displays user-friendly error messages
+- **Validation Errors:** Form validation prevents invalid submissions
+- **Loading States:** Spinner and loading text during API calls
+
+**Data Storage:**
+- **Frontend:** Uses `localStorage` to persist results between page navigation
+- **Backend:** Stateless - processes each request independently
+- **Demo Data:** Static JSON file with 5 pre-configured fitness/wellness studios
 
 ---
 
@@ -185,8 +213,9 @@ cd frontend && npm install && npm run dev
 ### **Alternative: Screen Recording Demo**
 If you prefer not to run the application locally, you can watch the complete demo:
 - **PowerPoint Submission:** Screen recording included in the submitted PowerPoint
-- **GitHub Repository:** Screen recording file available in the repository
+- **GitHub Repository:** [AWE DEMO.mov](demo/AWE%20DEMO.mov) - Complete walkthrough video
 - **Shows:** Complete user journey from form submission to AI-generated ads
+- **Duration:** Full demonstration of the platform's capabilities
 
 ## 🎨 **Key Features**
 
