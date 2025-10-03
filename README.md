@@ -1,6 +1,6 @@
 # AWE Agency - AI-Powered Adtech Platform
 
-## 🌐 **LIVE DEMO** (For Competition Judges)
+## 🌐 **LIVE DEMO**
 
 ### **🚀 INSTANT ACCESS - FRONTEND ONLY**
 **Visit: [https://bob25.vercel.app/](https://bob25.vercel.app/)**
