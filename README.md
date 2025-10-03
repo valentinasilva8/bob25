@@ -18,7 +18,6 @@
 
 ### **1. Landing Page Experience** ✅ **WORKS ON LIVE VERSION**
 - **Visit:** [https://bob25.vercel.app/](https://bob25.vercel.app/)
-- **Observe:** Beautiful hero section with rotating wellness business images
 - **Notice:** "AWE — not A-I. It's A-WE" tagline emphasizing human-centered approach
 - **Explore:** All UI buttons are fully functional - navigate through different sections
 - **Learn More:** Check out the Sustainability tab to understand our environmental approach
