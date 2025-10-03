@@ -59,6 +59,12 @@ After completing the form, you'll see:
 
 **Personalized Ad Campaigns:**
 - **Unique ad variations** tailored to the specific business using their story & mission to craft the perfect tone
+- **Smart audience targeting** - each ad targets specific audience segments like:
+  - `yoga_enthusiasts` - Experienced practitioners seeking community
+  - `busy_professionals` - Working adults needing stress relief and balance
+  - `new_to_yoga` - Beginners looking for accessible, welcoming classes
+  - `wellness_seekers` - Health-conscious individuals exploring holistic practices
+  - `fitness_enthusiasts` - Active people wanting to complement their workouts
 - **Channel recommendations** (Social Media, Local Advertising, Email) - automatically selected based on the business type and target audience
 - **Environmental impact metrics** based on creative volume
 - **Targeting summary** with audience insights
@@ -89,11 +95,39 @@ After completing the form, you'll see:
 - **Location:** Affects local community messaging and regional preferences
 - **Goals:** Shapes call-to-action and value propositions
 - **Values:** Determines emotional tone and brand alignment
+- **Audience Segments:** Each ad targets a specific demographic:
+  - **`yoga_enthusiasts`** - For experienced practitioners who value community and advanced practices
+  - **`busy_professionals`** - For working adults who need stress relief and time-efficient wellness
+  - **`new_to_yoga`** - For beginners who need encouragement and accessibility messaging
+  - **`wellness_seekers`** - For health-conscious individuals exploring holistic approaches
+  - **`fitness_enthusiasts`** - For active people looking to complement their existing routines
 
 **3. Channel-Specific Optimization:**
 - **Social Media:** Shorter, more visual content with hashtags
+  - **Yoga Studios:** 
+    - 18-25: Instagram, TikTok with trending wellness hashtags
+    - 25-35: Instagram, Facebook with lifestyle-focused mindfulness
+    - 35-45: Facebook, LinkedIn with professional wellness content
+    - 45+: Facebook with community-focused, educational content
+  - **Fitness Centers:**
+    - 18-25: TikTok with high-energy workout challenges
+    - 25-35: Instagram with lifestyle fitness content
+    - 35-45: Facebook, LinkedIn with health-focused messaging
+    - 45+: Facebook with gentle fitness and health education
+  - **Pilates Studios:** Instagram with precise movement demonstrations (all ages)
+  - **Dance Studios:** TikTok, Instagram with dynamic movement content (all ages)
+  - **Wellness Centers:** Facebook, LinkedIn with holistic health education (all ages)
 - **Local Advertising:** Community-focused, location-specific messaging
+  - **Yoga/Pilates:** Community boards, local wellness events, partner studios
+  - **Fitness Centers:** Gym partnerships, sports clubs, corporate wellness programs
+  - **Dance Studios:** Local dance schools, performance venues, arts communities
+  - **Wellness Centers:** Healthcare providers, holistic practitioners, community centers
 - **Email:** Longer-form, relationship-building content
+  - **Yoga Studios:** Class schedules, meditation guides, wellness tips
+  - **Fitness Centers:** Workout plans, nutrition advice, progress tracking
+  - **Pilates Studios:** Technique tutorials, posture guides, equipment tips
+  - **Dance Studios:** Choreography videos, performance announcements, skill development
+  - **Wellness Centers:** Health education, treatment options, holistic approaches
 
 **4. Environmental Impact Scaling:**
 - **1-2 creatives/week:** 1.5x multiplier (small studio)
