@@ -2,22 +2,29 @@
 
 ## 🌐 **LIVE DEMO** (For Competition Judges)
 
-### **🚀 INSTANT ACCESS - NO SETUP REQUIRED**
+### **🚀 INSTANT ACCESS - FRONTEND ONLY**
 **Visit: [https://bob25.vercel.app/](https://bob25.vercel.app/)**
 
-The application is live and ready to demo! No installation or setup required.
+**⚠️ IMPORTANT:** This live version shows the complete UI/UX experience but **cannot process form submissions** (backend not deployed). 
+
+**For Full Demo Experience:**
+- **Option 1:** Run locally (see instructions below) for complete functionality
+- **Option 2:** Watch the screen recording demo in the submitted PowerPoint
+- **Option 3:** Screen recording available in the GitHub repository
 
 ---
 
 ## 🎯 **Step-by-Step Demo Guide for Judges**
 
-### **1. Landing Page Experience**
+### **1. Landing Page Experience** ✅ **WORKS ON LIVE VERSION**
 - **Visit:** [https://bob25.vercel.app/](https://bob25.vercel.app/)
 - **Observe:** Beautiful hero section with rotating wellness business images
 - **Notice:** "AWE — not A-I. It's A-WE" tagline emphasizing human-centered approach
-- **Click:** "Get Started" button to begin the demo
+- **Explore:** All UI buttons are fully functional - navigate through different sections
+- **Learn More:** Check out the Sustainability tab to understand our environmental approach
+- **Start Demo:** Click either "Get Started" or "See How We Help" to begin the demo of our services
 
-### **2. Registration Process (5 Steps)**
+### **2. Registration Process (5 Steps)** ⚠️ **REQUIRES LOCAL SETUP TO RECEIVE ADS RECOMMENDATIONS**
 **Step 1: Business Information**
 - **Business Name:** Enter one of these demo companies (case-insensitive):
   - `Solstice Yoga Studio`
@@ -25,33 +32,44 @@ The application is live and ready to demo! No installation or setup required.
   - `Zen Pilates Studio`
   - `Flow State Dance`
   - `Mindful Movement Wellness`
-- **Location:** Enter any ZIP code (e.g., 90210)
-- **Age Range:** Select any range (e.g., 25-35)
+- **Zip Code:** Enter any ZIP code (e.g., 90210)
 
-**Step 2: Business Goals**
-- **Primary Goal:** Select any option (e.g., "Increase brand awareness")
-- **Target Audience:** Select any option (e.g., "Fitness enthusiasts")
+**Step 2: Business Details**
+- **Mission & Story:** Describe what inspired you to start this business and what makes you unique
+- **Products & Services:** Describe what you offer - products, services, classes, etc.
 
-**Step 3: Budget & Timeline**
-- **Monthly Budget:** Select any range (e.g., "$1,000 - $5,000")
-- **Campaign Duration:** Select any option (e.g., "3-6 months")
+**Step 3: Target Audience**
+- **Target Audience:** Describe your ideal customers, their pain points, interests, and what they value most
 
-**Step 4: Brand Voice**
-- **Tone:** Select any option (e.g., "Professional")
-- **Values:** Select any options (e.g., "Sustainability", "Community")
+**Step 4: Demographics & Interests**
+- **Age Range:** Select from 18-25, 25-35, 35-45, 45-55, or 55+
+- **Interests:** Select from Yoga, Meditation, Wellness, Mindfulness, Fitness, Stress Relief, Nutrition, Community
 
 **Step 5: Creative Needs**
-- **Creatives per Week:** Select any option (e.g., "3-5")
+- **Creatives per Week:** Select from:
+  - 1-2 creatives per week
+  - 3-5 creatives per week
+  - 6-10 creatives per week
+  - 11-20 creatives per week
+  - 20+ creatives per week
 - **Note:** This affects environmental impact calculations
 
 ### **3. Results Page - AI-Generated Ads**
 After completing the form, you'll see:
 
 **Personalized Ad Campaigns:**
-- **3 unique ad variations** tailored to the specific business
-- **Channel recommendations** (Social Media, Local Advertising, Email)
+- **Unique ad variations** tailored to the specific business using their story & mission to craft the perfect tone
+- **Channel recommendations** (Social Media, Local Advertising, Email) - automatically selected based on the business type and target audience
 - **Environmental impact metrics** based on creative volume
 - **Targeting summary** with audience insights
+
+### **4. Explore the Full Website**
+- **Navigation:** Use the header menu to explore all sections
+- **Sustainability:** Visit the Sustainability tab to learn about our environmental approach and technical implementation
+- **Solutions:** Check out our service offerings and approach
+- **Testimonials:** Read about client success stories
+- **Pricing:** View our service packages
+- **Contact:** Learn how to get in touch with our team
 
 ---
 
@@ -110,17 +128,13 @@ After completing the form, you'll see:
 
 ---
 
-## 🚀 **Local Development Setup** (Optional)
+## 🚀 **Local Development Setup** (Required for Full Demo)
 
-If you want to run locally for development:
+**⚠️ IMPORTANT:** To experience the complete AI-powered ad generation pipeline, you must run the application locally. The live Vercel version only shows the frontend UI.
 
-### **Option 1: One-Command Setup**
-```bash
-chmod +x run.sh
-./run.sh
-```
+**For Full Demo Experience:**
 
-### **Option 2: Manual Setup**
+### **Manual Setup**
 ```bash
 # Terminal 1 - Backend
 python3 start_backend.py
@@ -133,6 +147,12 @@ cd frontend && npm install && npm run dev
 - **Frontend:** http://localhost:3000
 - **Backend API:** http://localhost:8002
 - **API Documentation:** http://localhost:8002/docs
+
+### **Alternative: Screen Recording Demo**
+If you prefer not to run the application locally, you can watch the complete demo:
+- **PowerPoint Submission:** Screen recording included in the submitted PowerPoint
+- **GitHub Repository:** Screen recording file available in the repository
+- **Shows:** Complete user journey from form submission to AI-generated ads
 
 ## 🎨 **Key Features**
 
@@ -163,11 +183,11 @@ The application includes:
 ## 🛑 **Stopping the Application** (Local Only)
 
 ```bash
-# Stop all processes
-./restart_clean.sh
-
-# Or manually
+# Stop all processes manually
 Ctrl+C in both terminals
+
+# Or kill processes on specific ports
+lsof -ti:3000,8002 | xargs kill -9 2>/dev/null || true
 ```
 
 ---
@@ -176,6 +196,5 @@ Ctrl+C in both terminals
 
 **AWE Agency** demonstrates how AI can create personalized, sustainable marketing solutions for small fitness and wellness businesses. The platform generates unique ad campaigns tailored to each business's story, values, and audience while tracking environmental impact.
 
-**Live Demo:** [https://bob25.vercel.app/](https://bob25.vercel.app/)
 
-**Built for AWE Agency Competition** 🏆
+
