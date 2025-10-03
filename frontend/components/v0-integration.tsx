@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { createClient } from "@/lib/supabase/client"
+import { createClient } from "@/components/awe/lib/supabase/client"
 
 interface BusinessFormData {
   business_name: string

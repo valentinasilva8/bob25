@@ -1,7 +1,1 @@
-{
-  "/auth/login/page": "app/auth/login/page.js",
-  "/auth/sign-up-success/page": "app/auth/sign-up-success/page.js",
-  "/onboarding/page": "app/onboarding/page.js",
-  "/solutions/page": "app/solutions/page.js",
-  "/dashboard/page": "app/dashboard/page.js"
-}
+{}
