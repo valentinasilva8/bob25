@@ -1,8 +1,10 @@
-import { updateSession } from "@/components/awe/lib/supabase/middleware"
 import type { NextRequest } from "next/server"
+import { NextResponse } from "next/server"
 
+// Mock middleware - no authentication needed for demo
 export async function middleware(request: NextRequest) {
-  return await updateSession(request)
+  // For demo purposes, allow all requests
+  return NextResponse.next()
 }
 
 export const config = {
@@ -13,8 +15,9 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - images - .svg, .png, .jpg, .jpeg, .gif, .webp
+     * - /register routes (uses external API, not Supabase)
      * Feel free to modify this pattern to include more paths.
      */
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|register|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 }

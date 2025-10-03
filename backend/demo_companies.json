@@ -1,0 +1,339 @@
+{
+  "companies": {
+    "Solstice Yoga Studio": {
+      "business_name": "Solstice Yoga Studio",
+      "zipcode": "10001",
+      "mission": "Solstice Yoga Studio was founded to bring mindful movement and holistic wellness into the heart of its neighborhood. We believe every person deserves a safe, welcoming space to practice yoga and find their inner strength.",
+      "products": "In-studio yoga classes (vinyasa, yin, hatha), small group workshops (sound baths, meditation, yoga therapy), private one-to-one sessions, and an online library of recorded classes. We also sell branded yoga mats, blocks, apparel, and wellness accessories.",
+      "audience": "Adults 25-60, skewing female but inclusive of all genders. Many live or work locally or regionally, health-conscious, middle to upper income. They seek authentic, community-focused wellness experiences.",
+      "age_range": "25-45",
+      "interests": ["yoga", "meditation", "wellness", "mindfulness"],
+      "preferred_channels": ["social", "local", "email"],
+      "generated_ads": [
+        {
+          "id": "ad_1",
+          "headline": "Find Your Flow at Solstice Yoga Studio",
+          "body": "Join our welcoming community in Manhattan for vinyasa, yin, and meditation classes. All levels welcome - from beginners to advanced practitioners.",
+          "cta": "Book Your First Class",
+          "audience_segment": "yoga_enthusiasts",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "community_focused"
+        },
+        {
+          "id": "ad_2",
+          "headline": "Transform Your Wellness Journey",
+          "body": "Experience personalized yoga therapy, sound baths, and meditation workshops designed for busy professionals seeking balance and mindfulness.",
+          "cta": "Explore Workshops",
+          "audience_segment": "busy_professionals",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "wellness_focused"
+        },
+        {
+          "id": "ad_3",
+          "headline": "Yoga Classes for Every Body",
+          "body": "Inclusive, accessible yoga in the heart of NYC. Whether you're new to yoga or deepening your practice, find your perfect class with us.",
+          "cta": "Start Your Practice",
+          "audience_segment": "new_to_yoga",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "beginner_friendly"
+        }
+      ],
+      "channel_recommendations": {
+        "best_channel": "facebook_local",
+        "total_confidence": 0.9,
+        "recommendations": [
+          {
+            "channel": "facebook_local",
+            "confidence": 0.9,
+            "reason": "Perfect for local yoga community building and event promotion",
+            "priority": "High"
+          },
+          {
+            "channel": "instagram_stories",
+            "confidence": 0.85,
+            "reason": "Great for visual content showcasing poses and studio atmosphere",
+            "priority": "High"
+          },
+          {
+            "channel": "google_local",
+            "confidence": 0.8,
+            "reason": "Excellent for local discovery when people search for yoga classes",
+            "priority": "Medium"
+          }
+        ]
+      },
+      "environmental_impact": {
+        "total_ads_generated": 3,
+        "total_energy_kwh": 0.003,
+        "total_co2_kg": 0.0006,
+        "carbon_efficiency": "90% reduction vs traditional AI",
+        "green_score": 95.0
+      }
+    },
+    "Iron Will Fitness": {
+      "business_name": "Iron Will Fitness",
+      "zipcode": "90210",
+      "mission": "Iron Will Fitness is a boutique strength training studio that empowers individuals to build both physical and mental resilience. We believe that true strength comes from within and that every person has the potential to exceed their own expectations.",
+      "products": "Personal training sessions, small group strength classes, powerlifting coaching, nutrition counseling, and specialized programs for athletes and beginners. We also offer online coaching and custom workout plans.",
+      "audience": "Fitness enthusiasts aged 25-50 who are serious about strength training and personal development. They value personalized attention, expert coaching, and a supportive community that pushes them to be their best.",
+      "age_range": "25-45",
+      "interests": ["fitness", "wellness", "community"],
+      "preferred_channels": ["social", "local", "email"],
+      "generated_ads": [
+        {
+          "id": "ad_1",
+          "headline": "Build Unbreakable Strength at Iron Will Fitness",
+          "body": "Join Beverly Hills' premier strength training studio. Our expert coaches will help you achieve your fitness goals with personalized training and unwavering support.",
+          "cta": "Start Your Journey",
+          "audience_segment": "strength_training_enthusiasts",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "strength_focused"
+        },
+        {
+          "id": "ad_2",
+          "headline": "From Beginner to Beast in 90 Days",
+          "body": "Our proven strength training program has helped hundreds of people transform their bodies and confidence. No experience necessary - just commitment and determination.",
+          "cta": "Book Free Consultation",
+          "audience_segment": "fitness_beginners",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "transformation_focused"
+        }
+      ],
+      "channel_recommendations": {
+        "best_channel": "instagram_stories",
+        "total_confidence": 0.9,
+        "recommendations": [
+          {
+            "channel": "instagram_stories",
+            "confidence": 0.9,
+            "reason": "Perfect for showcasing workout transformations and gym atmosphere",
+            "priority": "High"
+          },
+          {
+            "channel": "facebook_local",
+            "confidence": 0.85,
+            "reason": "Great for local fitness community engagement and class promotions",
+            "priority": "High"
+          },
+          {
+            "channel": "google_local",
+            "confidence": 0.8,
+            "reason": "Excellent for local discovery when people search for personal training",
+            "priority": "Medium"
+          }
+        ]
+      },
+      "environmental_impact": {
+        "total_ads_generated": 2,
+        "total_energy_kwh": 0.002,
+        "total_co2_kg": 0.0004,
+        "carbon_efficiency": "90% reduction vs traditional AI",
+        "green_score": 92.0
+      }
+    },
+    "Zen Pilates Studio": {
+      "business_name": "Zen Pilates Studio",
+      "zipcode": "60601",
+      "mission": "Zen Pilates Studio combines the precision of classical Pilates with mindfulness practices to create a unique mind-body experience. We help our clients build core strength, improve posture, and find inner balance through intentional movement.",
+      "products": "Classical Pilates classes, reformer sessions, mat Pilates, private instruction, prenatal Pilates, and specialized programs for rehabilitation and athletic performance. We also offer virtual classes and home practice guides.",
+      "audience": "Health-conscious adults aged 25-65 who appreciate the mind-body connection. Many are professionals seeking stress relief, athletes looking to improve performance, or individuals recovering from injuries who need gentle yet effective exercise.",
+      "age_range": "25-55",
+      "interests": ["wellness", "mindfulness", "fitness"],
+      "preferred_channels": ["social", "local", "email"],
+      "generated_ads": [
+        {
+          "id": "ad_1",
+          "headline": "Discover the Power of Mindful Movement",
+          "body": "Experience the transformative benefits of Pilates in Chicago's most serene studio. Build strength, improve flexibility, and find your center through intentional movement.",
+          "cta": "Try Your First Class",
+          "audience_segment": "mindfulness_seekers",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "mindfulness_focused"
+        },
+        {
+          "id": "ad_2",
+          "headline": "Pilates for Every Body, Every Stage",
+          "body": "Whether you're a beginner or advanced practitioner, pregnant or recovering from injury, our expert instructors will guide you through safe, effective Pilates practice.",
+          "cta": "Book Private Session",
+          "audience_segment": "rehabilitation_focused",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "inclusive_focused"
+        }
+      ],
+      "channel_recommendations": {
+        "best_channel": "facebook_local",
+        "total_confidence": 0.85,
+        "recommendations": [
+          {
+            "channel": "facebook_local",
+            "confidence": 0.85,
+            "reason": "Perfect for local wellness community and class scheduling",
+            "priority": "High"
+          },
+          {
+            "channel": "instagram_stories",
+            "confidence": 0.8,
+            "reason": "Great for showcasing Pilates movements and studio ambiance",
+            "priority": "Medium"
+          },
+          {
+            "channel": "google_local",
+            "confidence": 0.75,
+            "reason": "Good for local discovery when people search for Pilates classes",
+            "priority": "Medium"
+          }
+        ]
+      },
+      "environmental_impact": {
+        "total_ads_generated": 2,
+        "total_energy_kwh": 0.002,
+        "total_co2_kg": 0.0004,
+        "carbon_efficiency": "90% reduction vs traditional AI",
+        "green_score": 94.0
+      }
+    },
+    "Flow State Dance": {
+      "business_name": "Flow State Dance",
+      "zipcode": "78701",
+      "mission": "Flow State Dance is Austin's premier contemporary dance studio where movement meets mindfulness. We believe dance is a powerful form of self-expression and healing that can transform lives and build community.",
+      "products": "Contemporary dance classes, choreography workshops, dance therapy sessions, performance opportunities, and specialized programs for all ages. We also offer virtual classes and dance fitness programs.",
+      "audience": "Creative individuals aged 18-50 who are drawn to expressive movement and artistic community. Many are professionals seeking creative outlets, students exploring dance, or adults returning to dance after years away.",
+      "age_range": "18-45",
+      "interests": ["wellness", "community", "fitness"],
+      "preferred_channels": ["social", "local", "email"],
+      "generated_ads": [
+        {
+          "id": "ad_1",
+          "headline": "Find Your Rhythm at Flow State Dance",
+          "body": "Discover the joy of movement in Austin's most welcoming dance community. From beginners to advanced dancers, everyone belongs here.",
+          "cta": "Join Our Community",
+          "audience_segment": "dance_enthusiasts",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "community_focused"
+        },
+        {
+          "id": "ad_2",
+          "headline": "Dance Your Way to Wellness",
+          "body": "Experience the healing power of dance through our therapeutic movement classes. Perfect for stress relief, self-expression, and building confidence.",
+          "cta": "Try Dance Therapy",
+          "audience_segment": "wellness_seekers",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "healing_focused"
+        }
+      ],
+      "channel_recommendations": {
+        "best_channel": "instagram_stories",
+        "total_confidence": 0.9,
+        "recommendations": [
+          {
+            "channel": "instagram_stories",
+            "confidence": 0.9,
+            "reason": "Perfect for showcasing dance moves and studio performances",
+            "priority": "High"
+          },
+          {
+            "channel": "facebook_local",
+            "confidence": 0.85,
+            "reason": "Great for local arts community engagement and event promotion",
+            "priority": "High"
+          },
+          {
+            "channel": "tiktok",
+            "confidence": 0.8,
+            "reason": "Excellent for dance challenges and reaching younger audiences",
+            "priority": "Medium"
+          }
+        ]
+      },
+      "environmental_impact": {
+        "total_ads_generated": 2,
+        "total_energy_kwh": 0.002,
+        "total_co2_kg": 0.0004,
+        "carbon_efficiency": "90% reduction vs traditional AI",
+        "green_score": 96.0
+      }
+    },
+    "Mindful Movement Wellness": {
+      "business_name": "Mindful Movement Wellness",
+      "zipcode": "33101",
+      "mission": "Mindful Movement Wellness is Miami's holistic wellness center where ancient practices meet modern science. We help busy professionals and wellness seekers find balance, reduce stress, and cultivate mindfulness through movement and meditation.",
+      "products": "Yoga classes, meditation sessions, breathwork workshops, sound healing, wellness coaching, and corporate wellness programs. We also offer retreats, online courses, and personalized wellness plans.",
+      "audience": "Health-conscious professionals aged 25-55 who are seeking stress relief, work-life balance, and holistic wellness approaches. Many are dealing with high-pressure jobs, chronic stress, or are new to wellness practices.",
+      "age_range": "25-50",
+      "interests": ["yoga", "meditation", "wellness", "mindfulness", "stress-relief"],
+      "preferred_channels": ["social", "local", "email"],
+      "generated_ads": [
+        {
+          "id": "ad_1",
+          "headline": "Reclaim Your Peace at Mindful Movement Wellness",
+          "body": "Escape the hustle of Miami and find your center through yoga, meditation, and mindful movement. Our expert instructors will guide you to inner calm and physical strength.",
+          "cta": "Book Your Session",
+          "audience_segment": "stress_relief_seekers",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "stress_relief_focused"
+        },
+        {
+          "id": "ad_2",
+          "headline": "Corporate Wellness That Actually Works",
+          "body": "Transform your workplace culture with our proven corporate wellness programs. Reduce stress, boost productivity, and create a healthier, happier team.",
+          "cta": "Schedule Consultation",
+          "audience_segment": "corporate_wellness",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "corporate_focused"
+        },
+        {
+          "id": "ad_3",
+          "headline": "Begin Your Wellness Journey Today",
+          "body": "New to yoga and meditation? Our beginner-friendly classes will gently introduce you to the transformative power of mindful movement and breathwork.",
+          "cta": "Start Your Journey",
+          "audience_segment": "wellness_beginners",
+          "energy_consumed": 0.001,
+          "co2_emissions": 0.0002,
+          "personalization_type": "beginner_focused"
+        }
+      ],
+      "channel_recommendations": {
+        "best_channel": "instagram_stories",
+        "total_confidence": 0.9,
+        "recommendations": [
+          {
+            "channel": "instagram_stories",
+            "confidence": 0.9,
+            "reason": "Perfect for showcasing peaceful studio atmosphere and wellness lifestyle",
+            "priority": "High"
+          },
+          {
+            "channel": "linkedin",
+            "confidence": 0.85,
+            "reason": "Great for reaching professionals interested in corporate wellness",
+            "priority": "High"
+          },
+          {
+            "channel": "facebook_local",
+            "confidence": 0.8,
+            "reason": "Excellent for local Miami wellness community engagement",
+            "priority": "Medium"
+          }
+        ]
+      },
+      "environmental_impact": {
+        "total_ads_generated": 3,
+        "total_energy_kwh": 0.003,
+        "total_co2_kg": 0.0006,
+        "carbon_efficiency": "90% reduction vs traditional AI",
+        "green_score": 97.0
+      }
+    }
+  }
+}
