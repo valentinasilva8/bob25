@@ -12,6 +12,12 @@
 - **Option 2:** Watch the screen recording demo in the submitted PowerPoint
 - **Option 3:** Screen recording available in the GitHub repository
 
+## 📖 **About**
+
+AWE Agency is an AI-powered adtech platform dedicated to empowering small fitness and wellness businesses with personalized, sustainable marketing solutions. Our mission is to level the playing field for small business owners by providing them with the same sophisticated marketing tools that large corporations use, while maintaining their authentic voice and community-focused values.
+
+We believe in fostering a community of wellness entrepreneurs who value sustainability, authentic storytelling, and meaningful connections with their customers. Our platform generates unique ad campaigns that not only drive business growth but also track environmental impact, helping businesses make a positive difference for both their communities and the planet.
+
 ## 🚀 **Local Development Setup** (Required for Full Demo)
 
 **⚠️ IMPORTANT:** To experience the complete AI-powered ad generation pipeline, you must run the application locally. The live Vercel version only shows the frontend UI.
@@ -254,9 +260,45 @@ lsof -ti:3000,8002 | xargs kill -9 2>/dev/null || true
 
 ---
 
+## ✅ **How to Verify if the App Started Successfully**
+
+### **Backend Verification:**
+1. **Health Check:** Visit `http://localhost:8002/health`
+   - ✅ **Success:** You should see `{"status":"healthy","carbon_tracking":true}`
+   - ❌ **Error:** If you see connection refused, the backend isn't running
+
+2. **API Documentation:** Visit `http://localhost:8002/docs`
+   - ✅ **Success:** You should see the Swagger UI documentation page
+   - ❌ **Error:** If you see connection refused, the backend isn't running
+
+### **Frontend Verification:**
+1. **Main Application:** Visit `http://localhost:3000`
+   - ✅ **Success:** You should see the AWE Agency landing page with rotating images
+   - ❌ **Error:** If you see connection refused, the frontend isn't running
+
+2. **Registration Page:** Visit `http://localhost:3000/register`
+   - ✅ **Success:** You should see the 5-step registration form
+   - ❌ **Error:** If you see a 404 or error page, there's a routing issue
+
+### **Full Integration Test:**
+1. **Complete Registration:** Fill out the form with one of the demo companies
+2. **Submit Form:** Click submit and wait for processing
+3. **Results Page:** You should see AI-generated ads and environmental metrics
+   - ✅ **Success:** Personalized ads appear with targeting information
+   - ❌ **Error:** If you see an error message, check that both services are running
+
+### **Troubleshooting:**
+- **Port 3000 in use:** Kill existing processes with `lsof -ti:3000 | xargs kill -9`
+- **Port 8002 in use:** Kill existing processes with `lsof -ti:8002 | xargs kill -9`
+- **Backend not starting:** Check Python version with `python3 --version` (needs 3.8+)
+- **Frontend not starting:** Check Node version with `node --version` (needs 16+)
+
+---
+
 ## 🏆 **Summary**
 
 **AWE Agency** demonstrates how AI can create personalized, sustainable marketing solutions for small fitness and wellness businesses. The platform generates unique ad campaigns tailored to each business's story, values, and audience while tracking environmental impact.
+
 
 
 
