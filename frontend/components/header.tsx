@@ -13,8 +13,8 @@ export function Header() {
           <Image 
             src="/awe-logo.jpg" 
             alt="AWE Logo" 
-            width={80} 
-            height={80} 
+            width={60} 
+            height={60} 
             className="rounded" 
             style={{ 
               mixBlendMode: 'multiply'
