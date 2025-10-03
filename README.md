@@ -1,6 +1,5 @@
 # AWE Agency - AI-Powered Adtech Platform
 
-> **Competition-Ready Demo** - No external dependencies required!
 
 ## 🚀 Quick Start (For Competition Judges)
 
