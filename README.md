@@ -52,6 +52,11 @@ If you prefer not to run the application locally, you can watch the complete dem
 ### **1. Landing Page Experience** ✅ **WORKS ON LIVE VERSION**
 - **Visit:** [https://bob25.vercel.app/](https://bob25.vercel.app/)
 - **Notice:** "AWE — not A-I. It's A-WE" tagline emphasizing human-centered approach
+- **Watch the Animation:** After "Let's create tomorrow's..." you'll see rotating phrases that cycle through:
+  - "waste-free ad delivery"
+  - "sustainable marketing"
+  - "community-focused campaigns"
+  - "environmentally conscious advertising"
 - **Explore:** All UI buttons are fully functional - navigate through different sections
 - **Learn More:** Check out the Sustainability tab to understand our environmental approach
 - **Start Demo:** Click either "Get Started" or "See How We Help" to begin the demo of our services
