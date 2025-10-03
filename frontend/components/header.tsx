@@ -10,7 +10,7 @@ export function Header() {
     <header className="relative z-20 border-b border-border bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center">
-          <Image src="/awe-logo.jpg" alt="AWE Logo" width={48} height={48} className="rounded" />
+          <Image src="/awe-logo.jpg" alt="AWE Logo" width={64} height={64} className="rounded" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
