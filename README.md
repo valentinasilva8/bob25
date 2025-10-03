@@ -14,7 +14,7 @@
 
 ## 📖 **About**
 
-AWE Agency is an AI-powered adtech platform dedicated to empowering small fitness and wellness businesses with personalized, sustainable marketing solutions. Our mission is to level the playing field for small business owners by providing them with the same sophisticated marketing tools that large corporations use, while maintaining their authentic voice and community-focused values.
+AWE Agency is an AI-powered adtech platform dedicated to empowering small fitness and wellness businesses with personalized, sustainable marketing solutions. Our mission is to level the playing field for small business owners, while maintaining their authentic voice and community-focused values.
 
 We believe in fostering a community of wellness entrepreneurs who value sustainability, authentic storytelling, and meaningful connections with their customers. Our platform generates unique ad campaigns that not only drive business growth but also track environmental impact, helping businesses make a positive difference for both their communities and the planet.
 
