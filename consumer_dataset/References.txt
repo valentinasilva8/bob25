@@ -1,0 +1,9 @@
+The information in our dataset allows the AWE Agency’s AI system to deliver ads that are personalized by location, age, and gender, ensuring they reach the right audience at the right time. By targeting consumers more precisely, we significantly reduce wasted impressions and eliminate irrelevant ads that often frustrate users. This approach not only enhances the consumer experience but also empowers small businesses helping their ads stand out, gain more clicks, and ultimately compete with larger companies in the digital space.
+
+
+Datasets were found from Kaggle:
+
+https://www.kaggle.com/datasets/jsonk11/social-media-advertising-dataset 
+
+https://www.kaggle.com/datasets/manishabhatt22/marketing-campaign-performance-dataset 
+
